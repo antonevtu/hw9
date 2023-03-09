@@ -22,6 +22,7 @@ fn main() {
         let temp = thermometer.get_temperature();
         println!("Temperature: {}", temp);
         socket.send_to(&temp.to_be_bytes(), addr_to).unwrap();
+
         thread::sleep(time::Duration::from_millis(500));
     }
 }
